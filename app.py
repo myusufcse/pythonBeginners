@@ -1,16 +1,18 @@
-def letter_changes(your_text):
-    i = 0
-    str1 = ""
-    while i < len(your_text):
-        x = your_text[i]
-        if x.isalpha():
-            str1 = str1 + str(chr(ord(x) + 1))
+class A:
+    lis = []
+    def printNos(self,N):
+        if N == 1:
+            self.lis.append(1)
+            print(1, end=' ')
         else:
-            str1 = str1 + x
-        i += 1
-
-    return str1
+            self.printNos(N - 1)
+            self.lis.append(N)
+            print(N, end=' ')
 
 
 # keep this function call here
-print(letter_changes(str(input('Enter Your Name : '))).strip())
+a = A()
+a.printNos(10)
+print()
+print(a.lis)
+print(*a.lis)
